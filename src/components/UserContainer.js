@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { usePrevious } from "../helpingFunctions/customHooks";
 import ButtonSection from "./ButtonSection";
 import EachUser from "./EachUser";
 import Loader from "./Loader";
@@ -35,9 +34,6 @@ const UserContainer = props => {
 
         getUsers();
     }, [numberOfUsers])
-
-    //custom Hook
-    const previousData = usePrevious({numberOfUsers});
 
 
     //Functions

@@ -1,6 +1,7 @@
-import { MailOutlined, PhoneOutlined } from "@ant-design/icons";
 import React, { useState } from "react";
 import Dummy from "../static/dummy.png"
+import EmailIcon from "../static/email.png"
+import PhoneIcon from "../static/phone.png"
 
 const EachUser = (props) => {
 
@@ -25,14 +26,14 @@ const EachUser = (props) => {
             <h3 className="member-job-detail">{props.jobTitle}</h3>
             <h3 className="member-company-detail">{props.company}</h3>
             <div className="team-soc">
-            <div className="profile-icons emailIcon" onClick={(val) => copyToClipBoard(props?.email, "email")} onMouseOut={(type) => outFunc(type)}>
-                <span className="tooltiptext" id={`myTooltip_email${props.key}`}>{copied ? 'Copied' : 'Copy Email to clipboard'}</span>
-                <MailOutlined size={30} />
-            </div>
-            <div className="profile-icons phoneIcon" onClick={(val) => copyToClipBoard(props?.phone, "phone")} onMouseOut={(type) => outFunc(type)}>
-                <span className="tooltiptext" id={`myTooltip_phone${props.key}`}>{copied ? 'Copied' : 'Copy Phone to clipboard'}</span>
-                <PhoneOutlined />
-            </div>
+                <div className="profile-icons phoneIcon" onClick={(val) => copyToClipBoard(props?.phone, "phone")} onMouseOut={(type) => outFunc(type)}>
+                    <span className="tooltiptext" id={`myTooltip_phone${props.key}`}>{copied ? 'Copied' : 'Copy Phone to clipboard'}</span>
+                    <img src={PhoneIcon} alt="phone" width={20}/>
+                </div>
+                <div className="profile-icons emailIcon" onClick={(val) => copyToClipBoard(props?.email, "email")} onMouseOut={(type) => outFunc(type)}>
+                    <span className="tooltiptext" id={`myTooltip_email${props.key}`}>{copied ? 'Copied' : 'Copy Email to clipboard'}</span>
+                    <img src={EmailIcon} alt="email" width={20}/>
+                </div>
             </div>
         </div>
     )
