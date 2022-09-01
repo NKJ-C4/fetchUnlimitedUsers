@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { usePrevious } from "../helpingFunctions/customHooks";
 import ButtonSection from "./ButtonSection";
 import EachUser from "./EachUser";
 import Loader from "./Loader";
@@ -35,10 +36,11 @@ const UserContainer = props => {
         getUsers();
     }, [numberOfUsers])
 
+    //custom Hook
+    const previousData = usePrevious({numberOfUsers});
+
 
     //Functions
-
-
     //Function to update users on click of Previous or next Button
     const updateUsers = (type) => {
         let currentNum = numberOfUsers;
@@ -47,9 +49,11 @@ const UserContainer = props => {
     return (
         <div className="user-container">
             <div className="users-sub-container">
-                {(loader && numberOfUsers === 0) && <Loader className="globalLoader" />}
+                {(loader && numberOfUsers === 0 && users.length<1 ) && //users.length < 1 check is to make sure that the global loader doesn't show up except the first time
+                    <Loader className="globalLoader" /> 
+                }
                 {users?.map((item, index) => {
-                    return (
+                    return ( 
                         <EachUser 
                             key={item?.id}
                             phone={item?.Phone} 
