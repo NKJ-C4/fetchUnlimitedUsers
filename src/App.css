@@ -1,0 +1,186 @@
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+.App {
+  text-align: center;
+}
+/* Header STARTS*/
+.header-cont{
+  background-color: #2B72E8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.header-cont h1{
+  margin-top: 0;
+  margin-bottom: 0;
+}
+/* Header ENDS */
+
+/* UserContainer CSS STARTS */
+.user-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.users-sub-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-height: 500px;
+}
+/* UserContainer CSS ENDS */
+
+/* EachUser CSS STARTS */
+.member {
+  background-color: white;
+  color: black;
+  width: 254px;
+  height: 401px;
+  border: 1px solid grey;
+  margin: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+
+.member-name{
+  font: normal normal 500 17px Arial;
+  margin: 8px 0px;
+}
+
+.member-job-detail{
+  font: normal normal 400 13px Arial;
+  color: grey;
+  margin: 3px 0px;
+}
+
+.member-company-detail{
+  font: normal normal 600 16px Times;
+}
+
+.team-dp {
+  width: 254px;
+}
+
+.team-soc{
+  margin: 10px 0px;
+}
+
+.team-soc a{
+  margin: 0px 5px;
+}
+/* Each User CSS Ends */
+
+/* ButtonSection CSS STARTS */
+.btn-section{
+  margin: 10px 0px 20px 0px;
+}
+.btn-default{
+  cursor: pointer;
+  padding: 10px;
+  width: 100px;
+  transition: 0.3s;
+  height: 50px;
+}
+
+.next-btn{
+  background: #2B72E8 0% 0% no-repeat padding-box;
+  border: none;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+}
+
+button.prev-btn {
+  font-size: 12px;
+  margin: 20px 10px;
+  color: #3964de;
+  background: white;
+  border: 1px solid #3964de;
+}
+
+button.prev-btn[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+button.prev-btn[disabled]:hover{
+  letter-spacing: normal;
+  width: 100px;
+  background-color: lightgrey;
+}
+.btn-default:hover{
+  letter-spacing: 4px;
+  width: 130px;
+}
+/* ButtonSection CSS ENDS */
+
+/* Loader */
+
+.tspinner img {
+  width: 25px;
+}
+
+.tspinner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tspinner .globalLoader{
+  width: 100px;
+}
+
+/* Loader */
+
+/* Excess styling */
+.mailto-link {
+  position: relative;
+  padding: 8px 0;
+}
+
+.mailto-message {
+  top: 1px;
+  left: 50%;
+  margin-bottom: -5px;
+  transform: translate(-50%, -100%);
+  position: absolute;
+  display: none;
+  width: auto;
+  white-space: nowrap;
+  font-size: 12px;
+  background-color: black;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 2px;
+}
+.mailto-message:after, .mailto-message:before {
+  content: "";
+}
+.mailto-message:before {
+  top: 100%;
+  left: 50%;
+  border: solid transparent;
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(0, 0, 0, 0);
+  border-top-color: #000000;
+  border-width: 4px;
+  margin-left: -4px;
+}
+
+.mailto-link:hover .mailto-message,
+.mailto-link:focus .mailto-message,
+.mailto-link:focus-within .mailto-message {
+  display: block;
+}
