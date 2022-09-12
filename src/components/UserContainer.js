@@ -23,7 +23,7 @@ const UserContainer = props => {
     //Function to fetch API for users 
     const getUsers = () => {
         setLoader(true)
-        let apiUrl = "http://give-me-users-forever.herokuapp.com/api/users/" + numberOfUsers + "/next";
+        let apiUrl = "https://give-me-users-forever.herokuapp.com/api/users/" + numberOfUsers + "/next";
         fetch(apiUrl, {
             method: "GET"
         })
