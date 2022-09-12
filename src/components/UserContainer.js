@@ -12,31 +12,33 @@ const UserContainer = props => {
 
     //Defining useEffects to fetch the users
     useEffect(() => {
-        //Function to fetch API for users 
-        const getUsers = () => {
-            setLoader(true)
-            let apiUrl = "http://give-me-users-forever.herokuapp.com/api/users/" + numberOfUsers + "/next";
-            fetch(apiUrl, {
-                method: "GET"
-            })
-                .then(res => res.json())
-                .then(responseData => {
-                    if(responseData){
-                        setUsers(responseData?.users.slice(0,10));
-                        setLoader(false);
-                    }
-                })
-                .catch(() => {
-                    alert("Something went wrong!")
-                    setLoader(false);
-                })
-        }
+
+        
 
         getUsers();
     }, [numberOfUsers])
 
 
     //Functions
+    //Function to fetch API for users 
+    const getUsers = () => {
+        setLoader(true)
+        let apiUrl = "http://give-me-users-forever.herokuapp.com/api/users/" + numberOfUsers + "/next";
+        fetch(apiUrl, {
+            method: "GET"
+        })
+            .then(res => res.json())
+            .then(responseData => {
+                if(responseData){
+                    setUsers(responseData?.users.slice(0,10));
+                    setLoader(false);
+                }
+            })
+            .catch(() => {
+                alert("Something went wrong!")
+                setLoader(false);
+            })
+    }
     //Function to update users on click of Previous or next Button
     const updateUsers = (type) => {
         let currentNum = numberOfUsers;
